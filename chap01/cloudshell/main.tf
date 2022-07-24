@@ -1,3 +1,13 @@
+terraform {
+  required_version = "~> 1.2"
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "~> 4.29"
+    }
+  }
+}
+
 resource "google_compute_instance" "this" {
   name         = "cloudshell"
   machine_type = "e2-small"
