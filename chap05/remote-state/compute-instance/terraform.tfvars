@@ -1,3 +1,3 @@
-project_id = "tf-gcp-01"
+project_id = "<PROJECT_ID>"
 
 server_name = "remote-state"

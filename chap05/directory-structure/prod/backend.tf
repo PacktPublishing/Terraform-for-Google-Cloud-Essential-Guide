@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "tf-gcp-01-tf-state"
+    bucket = "<PROJECT_ID>-tf-state"
     prefix = "chap05/directoy-structure/dev"
   }
 }
