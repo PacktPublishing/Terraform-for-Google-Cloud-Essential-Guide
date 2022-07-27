@@ -1,4 +1,3 @@
-mkdir ~/.config/gcloud/ -p
-
-mv ../key-file/terraform.json ~/.config/gcloud/terraform.json  
-export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/terraform.json  
+#!/bin/bash
+export GOOGLE_CREDENTIALS=`cat ../key-file/terraform.json`
+export GOOGLE_CLOUD_PROJECT=`gcloud info --format="value(config.project)"`
