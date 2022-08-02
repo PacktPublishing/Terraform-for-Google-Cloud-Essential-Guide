@@ -24,5 +24,5 @@ variable "machine_size" {
 variable "environment" {
   type        = string
   description = "Type of environment"
-  default = "dev"
+  default     = "dev"
 }

@@ -36,7 +36,7 @@ resource "google_compute_instance" "this" {
   metadata_startup_script = file("${path.module}/startup.sh")
   tags                    = ["http-server", ]
   labels = {
-    "created_by" = "terraform"
+    "created_by"  = "terraform"
     "environment" = var.environment
   }
 }
