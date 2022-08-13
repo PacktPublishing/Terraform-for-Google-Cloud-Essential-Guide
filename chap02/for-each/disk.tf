@@ -17,7 +17,6 @@
 
 # # resource "google_compute_subnetwork" "this" {
 # #   depends_on               = [resource.google_compute_network.this]
-# #   project                  = var.project_id
 # #   for_each                 = var.subnets
 # #   network                  = var.network
 # #   name                     = each.key
