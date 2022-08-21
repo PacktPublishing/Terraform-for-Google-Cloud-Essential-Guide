@@ -1,8 +1,3 @@
-variable "project_id" {
-  type        = string
-  description = "ID of the Google Project"
-}
-
 variable "region" {
   type        = string
   description = "Default Region"
@@ -25,4 +20,3 @@ variable "machine_type" {
   description = "Machine Type"
   default     = "e2-micro"
 }
-
