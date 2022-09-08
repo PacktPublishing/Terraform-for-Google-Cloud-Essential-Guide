@@ -11,28 +11,29 @@ resource "google_compute_instance" "this" {
     }
   }
 
-  # attached_disk {
-  #   source = "small-disk"
-  #   mode   = var.disks["small-disk"]["mode"]
-  # }
-
-  # attached_disk {
-  #   source = "medium-disk"
-  #   mode   = var.disks["medium-disk"]["mode"]
-  # }
-
-  # attached_disk {
-  #   source = "large-disk"
-  #   mode   = var.disks["large-disk"]["mode"]
-  # }
-
-  dynamic "attached_disk" {
-    for_each = var.disks
-    content {
-      source = attached_disk.key
-      mode   = attached_disk.value["mode"]
-    }
+  attached_disk {
+    source = google_compute_disk.this["small-disk"].name
+    mode   = var.disks["small-disk"]["mode"]
   }
+
+  attached_disk {
+    source = google_compute_disk.this["medium-disk"].name
+    mode   = var.disks["medium-disk"]["mode"]
+  }
+
+  attached_disk {
+    source = google_compute_disk.this["large-disk"].name
+    mode   = var.disks["large-disk"]["mode"]
+  }
+
+  # dynamic "attached_disk" {
+  #   for_each = var.disks
+  #   content {
+  #     source = google_compute_disk.this[attached_disk.key].name
+  #     # source = attached_disk.key
+  #     mode   = attached_disk.value["mode"]
+  #   }
+  # }
 
   network_interface {
     network = "default"

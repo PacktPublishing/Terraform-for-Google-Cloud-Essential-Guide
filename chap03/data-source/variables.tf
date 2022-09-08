@@ -32,6 +32,6 @@ variable "instance_number" {
 }
 
 variable "network_name" {
-  type = string
+  type    = string
   default = "default"
 }

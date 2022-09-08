@@ -29,9 +29,3 @@ variable "machine_type" {
 variable "disks" {
   type = map(any)
 }
-
-
-variable "foo
-
-
-"
