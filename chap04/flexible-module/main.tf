@@ -1,6 +1,6 @@
 module "server1" {
-  source       = "./modules/server"
-  name         = "${var.server_name}-1"
+  source = "./modules/server"
+  name   = "${var.server_name}-1"
 }
 
 module "server2" {

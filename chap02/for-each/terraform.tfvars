@@ -1,4 +1,4 @@
-project_id  = "graphite-victor-361907"
+project_id  = "<PROJECT_ID>"
 server_name = "foreach"
 
 network = "my-network"

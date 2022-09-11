@@ -2,7 +2,7 @@
 unset GOOGLE_CREDENTIALS  
 
 # Delete previously issued keys
-rm ~/.terraform.json
+rm ../key-file/terraform.json
 gcloud iam service-accounts keys list    --iam-account=$GOOGLE_SERVICE_ACCOUNT
 gcloud iam service-accounts keys delete   <SERVICE ACCOUNT ID>  --iam-account=$GOOGLE_SERVICE_ACCOUNT
 

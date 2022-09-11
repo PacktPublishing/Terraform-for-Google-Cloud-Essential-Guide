@@ -1,3 +1,6 @@
-# output "instance_ip_addr" {
-#   value = google_compute_instance.this.network_interface.0.access_config.0.nat_ip
-# # }
+output "instance_ip_addr" {
+  value = [
+    google_compute_instance.this.network_interface.0.access_config.0.nat_ip,
+    google_compute_instance.beta.network_interface.0.access_config.0.nat_ip,
+  ]
+}
