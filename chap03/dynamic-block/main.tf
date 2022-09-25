@@ -1,6 +1,4 @@
 resource "google_compute_instance" "this" {
-  depends_on = [google_compute_disk.this]
-
   name         = var.server_name
   machine_type = var.machine_type
   zone         = var.zone
@@ -30,7 +28,6 @@ resource "google_compute_instance" "this" {
   #   for_each = var.disks
   #   content {
   #     source = google_compute_disk.this[attached_disk.key].name
-  #     # source = attached_disk.key
   #     mode   = attached_disk.value["mode"]
   #   }
   # }

@@ -26,9 +26,9 @@ resource "google_compute_instance" "this" {
   network_interface {
     network = "default"
     dynamic "access_config" {
-      for_each = var.static_ip ? ["1"] : []
+      for_each = google_compute_address.static
       content {
-        nat_ip = google_compute_address.static[0].address
+        nat_ip = access_config.value["address"]
       }
     }
   }
