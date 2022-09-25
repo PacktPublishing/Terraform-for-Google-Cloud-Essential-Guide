@@ -15,7 +15,9 @@ resource "google_compute_instance" "this" {
     }
   }
 
-  metadata_startup_script = templatefile("startup.tftpl", { connection_name = data.terraform_remote_state.cloud_sql.outputs.connection_name })
+  metadata_startup_script = templatefile("startup.tftpl", {
+    connection_name = data.terraform_remote_state.cloud_sql.outputs.connection_name
+  })
 
   tags = ["http-server"]
 }
