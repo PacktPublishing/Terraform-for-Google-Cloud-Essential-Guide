@@ -1,0 +1,18 @@
+#!/bin/bash -x
+
+while getopts 'uh' OPTION; do
+  case "$OPTION" in
+    u)
+        grep  -lrnw  . -e $2 --exclude terraform.tfstate* --exclude-dir .terraform \
+| xargs -i@ sed -i s/$2/\<PROJECT_ID\>/g @
+    exit 1
+    ;;
+    h)
+        echo "set-project-id [-uh] project-id $2"
+        exit 1
+        ;;
+    esac
+    done
+
+grep  -lrnw  . -e "<PROJECT_ID>" --exclude terraform.tfstate* --exclude-dir .terraform \
+| xargs -i@ sed -i s/\<PROJECT_ID\>/$1/g @
