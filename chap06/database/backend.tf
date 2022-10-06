@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "soy-framing-362002-tf-state"
-    prefix = "chap06/layer2"
+    bucket = "<PROJECT_ID>-tf-state"
+    prefix = "chap06/database"
   }
 }

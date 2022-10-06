@@ -15,14 +15,21 @@ variable "zone" {
   default     = "us-central1-a"
 }
 
-variable "machine_type" {
-  type        = string
-  description = "Machine Type"
-  default     = "e2-micro"
+# variable "machine_type" {
+#   type        = string
+#   description = "Machine Type"
+#   default     = "e2-micro"
+# }
+
+# variable "source_image" {
+#   type        = string
+#   description = "Source Image"
+# }
+
+variable "load_balancer" {
+  type = map(any)
 }
 
-variable "source_image" {
-  type        = string
-  description = "Source Image"
-  default     = "e2-micro"
+variable "mig" {
+  type = map(any)
 }

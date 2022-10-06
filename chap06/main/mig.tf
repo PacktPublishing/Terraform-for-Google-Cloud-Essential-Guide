@@ -1,15 +1,15 @@
 # # google_compute_instance_template.this:
 resource "google_compute_instance_template" "this" {
-  name_prefix  = "my-template"
+  name_prefix  = var.mig.instance_template_name_prefix
   region       = var.region
-  machine_type = var.machine_type
+  machine_type = var.mig.machine_type
 
   disk {
-    source_image = var.source_image
+    source_image = var.mig.source_image
   }
 
   network_interface {
-    subnetwork = data.terraform_remote_state.layer1.outputs.subnetwork_self_links["iowa"]
+    subnetwork = data.terraform_remote_state.foundation.outputs.subnetwork_self_links["iowa"]
     access_config {
       // Ephemeral public IP
     }
@@ -22,7 +22,7 @@ resource "google_compute_instance_template" "this" {
     "allow-health-check"
   ]
   service_account {
-    email  = data.terraform_remote_state.layer1.outputs.service_account_email
+    email  = data.terraform_remote_state.foundation.outputs.service_account_email
     scopes = ["cloud-platform"]
   }
 
@@ -32,10 +32,10 @@ resource "google_compute_instance_template" "this" {
 }
 
 resource "google_compute_region_instance_group_manager" "this" {
-  name               = "my-mig"
+  name               = var.mig.mig_name
   region             = var.region
-  base_instance_name = "mig"
-  target_size        = 3
+  base_instance_name = var.mig.mig_base_instance_name
+  target_size        = var.mig.target_size
 
   version {
     instance_template = google_compute_instance_template.this.id
@@ -52,3 +52,4 @@ resource "google_compute_region_instance_group_manager" "this" {
     max_surge_fixed = 3
   }
 }
+

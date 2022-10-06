@@ -6,16 +6,15 @@ resource "random_string" "this" {
 
 resource "google_sql_database_instance" "this" {
   name             = "${var.db_settings.instance_name}-${random_string.this.result}"
-  database_version = var.database_version
+  database_version = var.db_settings.database_version
   region           = var.region
   root_password    = random_password.root.result
 
   settings {
-    tier = var.database_tier
+    tier = var.db_settings.database_tier
   }
   deletion_protection = false
 }
-
 
 resource "google_sql_database" "this" {
   name     = var.db_settings.db_name

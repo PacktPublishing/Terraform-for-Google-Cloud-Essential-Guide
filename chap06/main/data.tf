@@ -1,7 +1,7 @@
-data "terraform_remote_state" "layer1" {
+data "terraform_remote_state" "foundation" {
   backend = "gcs"
   config = {
-    bucket = "soy-framing-362002-tf-state"
-    prefix = "chap06/layer1"
+    bucket = "<PROJECT_ID>-tf-state"
+    prefix = "chap06/foundation"
   }
 }
