@@ -1,0 +1,16 @@
+{
+  "name": "index.js",
+  "version": "1.0.0",
+  "description": "Cloud run app",
+  "main": "indexjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Neil Kolban",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "redis": "^3.0.2"
+  }
+}

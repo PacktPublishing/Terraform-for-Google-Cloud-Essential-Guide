@@ -1,0 +1,31 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker build -t gcr.io/${_PROJECT_ID}/${_IMAGE} .
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker push gcr.io/${_PROJECT_ID}/${_IMAGE}
+  # deploys the container image
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: sh
+    args:
+      [
+        '-c',
+        'gcloud run deploy ${_SERVICE_NAME} --project ${_PROJECT_ID} --image gcr.io/${_PROJECT_ID}/${_IMAGE} --platform managed --region ${_REGION}  --allow-unauthenticated  --ingress internal-and-cloud-load-balancing  --quiet',
+      ]
+
+images:
+  - gcr.io/${_PROJECT_ID}/${_IMAGE}
+
+substitutions:
+  _REGION: us-central1
+  _PROJECT_ID: <PROJECT_ID>
+  _SERVICE_NAME: helloworld
+  _IMAGE: helloworld
+ 
