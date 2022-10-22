@@ -2,8 +2,6 @@ gcloud auth login --no-launch-browser
 
 gcloud config set project "<PROJECT_ID>"  
 
-gcloud services disable  iamcredentials.googleapis.com
-
 gcloud iam service-accounts create terraform \
     --description="Terraform Service Account" \
     --display-name="terraform"
@@ -16,4 +14,5 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:$GOOGLE_SERVICE_ACCOUNT" \
     --role="roles/editor" 
 
-gcloud iam service-accounts keys create "./terraform.json"     --iam-account=$GOOGLE_SERVICE_ACCOUNT 
+gcloud iam service-accounts keys create "./terraform.json"  \
+  --iam-account=$GOOGLE_SERVICE_ACCOUNT 
