@@ -29,7 +29,7 @@ variable "network" {
 variable "subnets" {
   description = "List of the subnets"
   type = list(object({
-    name = string
+    name          = string
     region        = string
     ip_cidr_range = string
   }))

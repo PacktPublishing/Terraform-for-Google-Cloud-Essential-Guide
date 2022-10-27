@@ -2,8 +2,8 @@ string = "This is a string"
 number = 14
 bool   = true
 
-list   = ["us-west1", "us-west2"]
-map    = { us-west1 = "Oregon", us-west2 = "Los Angeles" }
+list = ["us-west1", "us-west2"]
+map  = { us-west1 = "Oregon", us-west2 = "Los Angeles" }
 
 nested_map = {
   americas = ["us-west1", "us-west2"]

@@ -18,5 +18,5 @@ variable "zone" {
 
 variable "db_settings" {
   description = "Map of the various DB Settings"
-  type = map(any)
+  type        = map(any)
 }
