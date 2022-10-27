@@ -25,7 +25,7 @@ images:
 
 substitutions:
   _REGION: us-central1
-  _PROJECT_ID: <PROJECT_ID>
+  _PROJECT_ID: terraform-for-gcp
   _SERVICE_NAME: helloworld
   _IMAGE: helloworld
  

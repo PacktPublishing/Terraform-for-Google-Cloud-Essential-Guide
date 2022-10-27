@@ -10,7 +10,7 @@ resource "google_cloud_run_service" "hello_world" {
   template {
     spec {
       containers {
-        image = "gcr.io/terraform-for-gcp/helloworld:latest"
+        image = "gcr.io/terraform-for-gcp/helloworld"
       }
       service_account_name = data.terraform_remote_state.foundation.outputs.service_account_email
     }

@@ -13,6 +13,6 @@ mig = {
   mig_name                      = "mig-three-tier"
   mig_base_instance_name        = "three-tier"
   target_size                   = 2
-  source_image                  = "debian-cloud/debian-10"
+  source_image                  = "debian-cloud/debian-11"
   machine_type                  = "e2-micro"
 }

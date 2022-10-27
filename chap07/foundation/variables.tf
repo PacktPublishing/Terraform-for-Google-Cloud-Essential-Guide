@@ -20,8 +20,13 @@ variable "zone" {
 }
 
 variable "subnets" {
-  # type = map(any)
+  type = list(object({
+    name          = string
+    region        = string
+    ip_cidr_range = string
+  }))
 }
+
 
 variable "services" {
   type = list(string)

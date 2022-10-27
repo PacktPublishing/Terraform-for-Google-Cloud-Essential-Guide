@@ -1,10 +1,14 @@
+locals {
+  subnet_name = google_compute_subnetwork.this[var.subnets[0].name].name
+}
+
 resource "google_vpc_access_connector" "this" {
-  provider = google-beta
-  name     = var.vpc_connector_name
-  region   = var.region
+  provider   = google-beta
+  depends_on = [google_compute_subnetwork.this]
+  name       = var.vpc_connector_name
+  region     = var.region
   subnet {
-    name       = var.subnets[0].name
-    # project_id = var.project_id
+    name = local.subnet_name
   }
 }
 resource "google_redis_instance" "this" {
@@ -16,14 +20,15 @@ resource "google_redis_instance" "this" {
 }
 
 resource "google_secret_manager_secret" "redis_ip" {
-  depends_on = [google_redis_instance.this]
-  secret_id  = "redis-ip"
+
+  secret_id = "redis-ip"
   replication {
     automatic = true
   }
 }
 
 resource "google_secret_manager_secret_version" "redis_ip" {
+  # depends_on  = [google_redis_instance.this]
   secret      = google_secret_manager_secret.redis_ip.id
   secret_data = google_redis_instance.this.host
 }
