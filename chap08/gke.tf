@@ -1,7 +1,6 @@
 # # google_client_config and kubernetes provider must be explicitly specified like the following.
 data "google_client_config" "default" {
-  depends_on = [google_project_service.this[0], google_project_service.this[1], google_project_service.this[2]]
-}
+  }
 
 provider "kubernetes" {
 
@@ -16,9 +15,7 @@ locals {
 
 module "gke" {
   source  = "terraform-google-modules/kubernetes-engine/google"
-  version = "23.1.0"
-
-  depends_on = [google_project_service.this[0], google_project_service.this[1], google_project_service.this[2]]
+  version = "23.2.0"
 
   project_id = var.project_id
   region     = var.region
