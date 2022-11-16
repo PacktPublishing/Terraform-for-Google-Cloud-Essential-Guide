@@ -10,7 +10,7 @@ terraform {
 
 resource "google_compute_instance" "default" {
   name         = "test"
-  project = "charged-sector-365307"
+  project      = "charged-sector-365307"
   machine_type = "e2-micro"
   zone         = "us-central1-a"
 
@@ -25,7 +25,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
- 
+
   network_interface {
     network = "default"
 

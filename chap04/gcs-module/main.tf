@@ -1,4 +1,3 @@
-
 module "server1" {
   source = "gcs::https://www.googleapis.com/storage/v1/terraform-for-gcp/modules/server"
   name   = "${var.server_name}-1"

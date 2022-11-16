@@ -1,4 +1,4 @@
-project_id = "tf-gcp-02"
+project_id = "<PROJECT_ID_2>"
 zone       = "us-central1-c"
 
 server_name = "server-directory-structure"

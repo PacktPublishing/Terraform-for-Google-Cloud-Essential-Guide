@@ -18,6 +18,6 @@ resource "google_compute_instance" "google_compute_instance" {
 
 output "static_ip_address" {
   description = "Static IP Address"
-  value = google_compute_instance.google_compute_instance.network_interface[0].access_config[0].nat_ip
+  value       = google_compute_instance.google_compute_instance.network_interface[0].access_config[0].nat_ip
 }
 

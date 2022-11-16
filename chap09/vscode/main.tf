@@ -17,6 +17,6 @@ module "server3" {
   source       = "./modules/server"
   name         = "${var.server_name}-3"
   zone         = var.zone
-  machine_type = "e2-small" 
+  machine_type = "e2-small"
   static_ip    = true
 }

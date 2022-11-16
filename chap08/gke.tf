@@ -1,9 +1,8 @@
 # # google_client_config and kubernetes provider must be explicitly specified like the following.
 data "google_client_config" "default" {
-  }
+}
 
 provider "kubernetes" {
-
   host                   = "https://${module.gke.endpoint}"
   token                  = data.google_client_config.default.access_token
   cluster_ca_certificate = base64decode(module.gke.ca_certificate)
@@ -15,7 +14,7 @@ locals {
 
 module "gke" {
   source  = "terraform-google-modules/kubernetes-engine/google"
-  version = "23.2.0"
+  version = "= 23.3.0"
 
   project_id = var.project_id
   region     = var.region
