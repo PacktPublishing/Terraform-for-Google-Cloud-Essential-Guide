@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "<PROJECT_ID>-tf-state"
+    bucket = "causal-calculus-366901-tf-state"
     prefix = "chap04/git-module"
   }
 }
