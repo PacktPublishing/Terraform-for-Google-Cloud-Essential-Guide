@@ -1,3 +1,4 @@
+module "server1" {
   source = "git::https://github.com/PacktPublishing/Terraform-for-Google-Cloud-Essential-Guide.git//chap04/modules/server"
   name = "${var.server_name}-1"
 }
