@@ -2,6 +2,11 @@ project_id = "<PROJECT_ID>"
 network    = "cloudrun"
 region     = "us-central1"
 
+container_images = {
+  "hello" = "gcr.io/terraform-for-gcp/helloworld"
+  "redis" = "gcr.io/terraform-for-gcp/redis"
+}
+
 subnets = [
   {
     name          = "vpccon"

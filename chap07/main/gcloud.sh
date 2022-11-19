@@ -1,14 +1,14 @@
 export SERVICE_ACCOUNT=`gcloud iam service-accounts list --format="value(email)"  --filter=name:cloudrun`
 
-gcloud run deploy helloworld  --region us-central1   \
- --image gcr.io/terraform-for-gcp/helloworld:latest \
+gcloud run deploy hello  --region us-central1   \
+ --image gcr.io/terraform-for-gcp/helloworld  \
  --platform managed  --allow-unauthenticated  \
  --service-account $SERVICE_ACCOUNT \
  --ingress internal-and-cloud-load-balancing 
 
 
 gcloud run deploy redis  --region us-central1   \
- --image gcr.io/terraform-for-gcp/redis:latest \
+ --image gcr.io/terraform-for-gcp/redis \
  --platform managed  --allow-unauthenticated  \
  --service-account $SERVICE_ACCOUNT \
  --ingress internal-and-cloud-load-balancing \

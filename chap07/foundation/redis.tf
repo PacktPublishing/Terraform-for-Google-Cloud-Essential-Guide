@@ -20,15 +20,14 @@ resource "google_redis_instance" "this" {
 }
 
 resource "google_secret_manager_secret" "redis_ip" {
-
-  secret_id = "redis-ip"
+  depends_on = [google_project_service.this["secretmanager"]]
+  secret_id  = "redis-ip"
   replication {
     automatic = true
   }
 }
 
 resource "google_secret_manager_secret_version" "redis_ip" {
-  # depends_on  = [google_redis_instance.this]
   secret      = google_secret_manager_secret.redis_ip.id
   secret_data = google_redis_instance.this.host
 }

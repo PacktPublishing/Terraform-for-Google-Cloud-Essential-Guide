@@ -3,6 +3,10 @@ variable "project_id" {
   description = "ID of the Google Project"
 }
 
+variable "container_images" {
+  type = map(string)
+  description = "URL's of the container images"
+}
 variable "network" {
   type = string
 }
@@ -39,4 +43,3 @@ variable "roles" {
 variable "sa_name" {
   type = string
 }
-

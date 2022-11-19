@@ -1,5 +1,5 @@
-resource "google_cloud_run_service" "hello_world" {
-  name     = "helloworld"
+resource "google_cloud_run_service" "hello" {
+  name     = "hello"
   location = var.region
   metadata {
     annotations = {
@@ -10,16 +10,16 @@ resource "google_cloud_run_service" "hello_world" {
   template {
     spec {
       containers {
-        image = "gcr.io/terraform-for-gcp/helloworld"
+        image = var.container_images.hello
       }
       service_account_name = data.terraform_remote_state.foundation.outputs.service_account_email
     }
   }
 }
 
-resource "google_cloud_run_service_iam_binding" "hello_world" {
-  location = google_cloud_run_service.hello_world.location
-  service  = google_cloud_run_service.hello_world.name
+resource "google_cloud_run_service_iam_binding" "hello" {
+  location = google_cloud_run_service.hello.location
+  service  = google_cloud_run_service.hello.name
   role     = "roles/run.invoker"
   members = [
     "allUsers",
@@ -44,7 +44,8 @@ resource "google_cloud_run_service" "redis" {
     }
     spec {
       containers {
-        image = "gcr.io/terraform-for-gcp/redis:latest"
+        image = var.container_images.redis
+
         env {
           name = "REDIS_IP"
           value_from {
