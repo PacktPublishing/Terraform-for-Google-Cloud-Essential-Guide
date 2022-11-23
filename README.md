@@ -6,7 +6,7 @@ This is the code repository for [Terraform for Google Cloud Essential Guide], pu
 
 
 ## Instructions and Navigations
-All of the code is organized into folders and subfolders corresponding to each chapter. For example, <code>chap02/count</code>.
+All of the code is organized into folders and subfolders corresponding to each chapter. For example, <code>chap02/count</code> is the code for Chapter 2, section The count meta-argument
 
 You will have to replace the string <code>\<PROJECT-ID\></code> with the project id of your Google Cloud Project. To faciliate that, we have included a small <code>bash</code> script sets the Google Cloud project recursively.
  
