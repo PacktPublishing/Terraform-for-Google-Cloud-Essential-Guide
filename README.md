@@ -11,14 +11,14 @@ All of the code is organized into folders and subfolders corresponding to each c
 You will have to replace the string <code>\<PROJECT-ID\></code> with the project id of your Google Cloud Project. To faciliate that, we have included a small <code>bash</code> script sets the Google Cloud project recursively.
  
 ```
-./set-poject-id causal-calculus-366901
+./set-poject-id <PROJECT_ID>
 ```
-replaces all occurances of <code>\<PROJECT-ID\></code> in all files to <code>causal-calculus-366901</code>. Whereas the <code>-u</code> flag undoes the replacement, that is replacing all occurances back  <code>\<PROJECT-ID\></code>
+replaces all occurances of <code>\<PROJECT-ID\></code> in all files to <code><PROJECT_ID></code>. Whereas the <code>-u</code> flag undoes the replacement, that is replacing all occurances back  <code>\<PROJECT-ID\></code>
 
 ```
-./set-poject-id -u causal-calculus-366901
+./set-poject-id -u <PROJECT_ID>
 ```
-replaces all occurances of <code>causal-calculus-366901</code>  in all files to <code>\<PROJECT-ID\></code>
+replaces all occurances of <code><PROJECT_ID></code>  in all files to <code>\<PROJECT-ID\></code>
 
 Besides the Terraform code, the code also includes a number of <code>gcloud</code> and Shell commands that we use for the exercises. We included those in the files entitled <code>gcloud.sh</code>. It best to copy and then paste the comands into your shell.
 
