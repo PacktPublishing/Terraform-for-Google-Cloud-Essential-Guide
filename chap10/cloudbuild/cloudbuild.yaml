@@ -1,32 +1,31 @@
 steps:
-- id: 'tf init'
+- id: 'terraform init'
   name: 'hashicorp/terraform:${_TERRAFORM_VERSION}'
   args:
-  - init
-  - -input=false
+  - 'init' 
+  - '-input=false'
 
 - id: 'tflint init'
   name: 'ghcr.io/terraform-linters/tflint-bundle'
   args: 
-  - --init
+  - '--init'
   
 - id: 'tflint'
   name: 'ghcr.io/terraform-linters/tflint-bundle'
-  
-- id: 'tf plan'
+- id: 'terraform plan'
   name: 'hashicorp/terraform:${_TERRAFORM_VERSION}'
   args:
-  - plan
-  - -input=false
-  - -out=tfplan
+  - 'plan'
+  - '-input=false'
+  - '-out=tfplan'
 
-- id: 'tf apply'
+- id: 'terraform apply'
   name: 'hashicorp/terraform:${_TERRAFORM_VERSION}'
   args:
-  - apply
-  - -auto-approve
-  - -input=false
-  - tfplan
+  - 'apply'
+  - '-auto-approve'
+  - '-input=false'
+  - 'tfplan'
 
 substitutions:
   _TERRAFORM_VERSION: 1.3.0
