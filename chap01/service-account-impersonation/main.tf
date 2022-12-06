@@ -1,5 +1,5 @@
 resource "google_compute_instance" "this" {
-  name         = "server-service-account-impersonation"
+  name         = "service-account-impersonation"
   machine_type = "e2-small"
   zone         = "us-central1-a"
 
