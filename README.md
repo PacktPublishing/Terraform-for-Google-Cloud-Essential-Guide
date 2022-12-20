@@ -7,16 +7,17 @@ This is the code repository for [Terraform for Google Cloud Essential Guide](htt
 **Learn how to provision infrastructure in Google Cloud securely and efficiently**
 
 ## What is this book about?
-Google Cloud has adopted Terraform as the standard Infrastructure as Code tool. This necessitates a solid understanding of Terraform for any cloud architect or engineer working on Google Cloud. Yet no specific resources are available that focus on how to use Terraform on Google Cloud. 
+Google Cloud has adopted Terraform as the standard Infrastructure as Code tool. Thus, a good understanding of Terraform is essential for any cloud architect and engineer working on Google Cloud. This book is the first book that teaches Terraform specifically for Google Cloud. 
 
 This book covers the following exciting features:
-* Authenticate Terraform in Google Cloud using multiple methods
-* Write efficient Terraform code
-* Use modules to share Terraform templates
-* Manage multiple environments in Google Cloud
-* Apply Terraform to deploy multi-tiered architectures
-* Use public modules to deploy complex architectures quickly
-Integrate Terraform into your Google Cloud environment
+* Multiple methods to authenticate Terraform in Google Cloud
+* Writing efficient Terraform Code
+* Using modules to share Terraform templates
+* Managing multiple Environments in Google Cloud
+* Applying Terraform to deploy multi-tiered architectures
+* Using Public Modules to deploy complex architectures quickly
+* Integrate Terraform into your Google Cloud Environment
+
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1804619620) today!
 
