@@ -15,5 +15,5 @@ resource "google_compute_instance" "google_compute_instance" {
     }
   }
 
-  allow_stopping_for_update = true 
+  allow_stopping_for_update = true
 }

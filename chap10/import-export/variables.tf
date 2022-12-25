@@ -21,7 +21,7 @@ variable "server_name" {
 }
 
 variable "machine_type" {
-  type = string
+  type        = string
   description = "Machine Type"
-  default = "e2-micro"
+  default     = "e2-micro"
 }

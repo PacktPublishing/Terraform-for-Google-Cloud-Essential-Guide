@@ -4,7 +4,7 @@ variable "project_id" {
 }
 
 variable "container_images" {
-  type = map(string)
+  type        = map(string)
   description = "URL's of the container images"
 }
 variable "network" {
