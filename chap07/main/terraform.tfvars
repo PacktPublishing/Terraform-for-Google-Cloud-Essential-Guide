@@ -3,7 +3,7 @@ network    = "cloudrun"
 region     = "us-central1"
 
 container_images = {
-  "hello" = "gcr.io/terraform-for-gcp/helloworld"
+  "hello" = "gcr.io/terraform-for-gcp/hello"
   "redis" = "gcr.io/terraform-for-gcp/redis"
 }
 

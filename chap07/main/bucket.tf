@@ -31,9 +31,9 @@ resource "google_storage_bucket_object" "four_0_four" {
 }
 
 
-resource "google_storage_bucket_object" "celebration" {
-  name          = "img/singapore.jpg"
-  source        = "../static/img/singapore.jpg"
+resource "google_storage_bucket_object" "image" {
+  name          = "img/TerraformForGCP.jpg"
+  source        = "../static/img/TerraformForGCP.jpg"
   bucket        = google_storage_bucket.static.name
   cache_control = "no-store"
 }
