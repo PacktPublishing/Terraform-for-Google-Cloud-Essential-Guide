@@ -71,3 +71,8 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 ## Get to Know the Author
 **Bernd Nordhausen**
 is a seasoned cloud architect with over 25 years of experience working with industry leaders such as Intel and Accenture. He is a Google cloud authorized trainer and holds over a dozen cloud certifications from all three major cloud service providers. Currently working as an independent cloud consultant and Google Cloud trainer, Bernd was previously the technical lead for the Google Cloud practice at Accenture Southeast Asia. In that role, he developed and implemented several large-scale deployments on Google Cloud using Terraform. When his head is not in the cloud, Bernd is an aspiring wood worker and trail runner.
+
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781804619629">https://packt.link/free-ebook/9781804619629 </a> </p>
