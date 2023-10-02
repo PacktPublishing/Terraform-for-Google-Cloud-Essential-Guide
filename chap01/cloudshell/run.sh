@@ -22,8 +22,11 @@ unzip terraform_1.5.7_linux_amd64.zip
 # Move the executable to a directory in your path
 sudo mv terraform /usr/local/bin/
 
+# log version of Google Cloud SDK (assuming /usr/local/bin/ is in your PATH)
+gcloud --version
+
 # log out Terraform version (assuming /usr/local/bin/ is in your PATH)
-terraform version
+terraform --version
 
 # Assuming you have already downloaded and installed Google Cloud SDK authenticate with a service account (later we use an environment variable)
 gcloud auth activate-service-account --key-file=~/terraform-service-account.json
