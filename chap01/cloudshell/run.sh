@@ -25,8 +25,8 @@ sudo mv terraform /usr/local/bin/
 # log out Terraform version (assuming /usr/local/bin/ is in your PATH)
 terraform version
 
-# Assuming you have already downloaded and installed Google Cloud SDK authenticate with a service account
-gcloud auth activate-service-account --key-file=~/terrform-service-account.json
+# Assuming you have already downloaded and installed Google Cloud SDK authenticate with a service account (later we use an environment variable)
+gcloud auth activate-service-account --key-file=~/terraform-service-account.json
 
 # ensure gcloud.sh is executable
 chmod +x gcloud.sh
@@ -35,11 +35,14 @@ chmod +x gcloud.sh
 ./gcloud.sh
 
 # run terraform
+
 terraform init
 
 terraform plan --out=plan.txt
 
 terraform apply -auto-approve
+
+terrform destroy
 
 
 
