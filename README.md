@@ -46,7 +46,7 @@ All of the code is organized into folders and subfolders corresponding to each c
 You will have to replace the string <code>\<PROJECT-ID\></code> with the project id of your Google Cloud Project. To faciliate that, we have included a small <code>bash</code> script sets the Google Cloud project recursively.
  
 ```
-./set-project-id <PROJECT_ID>
+./set-project-id <PROJECT_ID>   (for Mac, use ./set-project-id-mac)
 ```
 replaces all occurances of <code>\<PROJECT-ID\></code> in all files to <code><PROJECT_ID></code>. Whereas the <code>-u</code> flag undoes the replacement, that is replacing all occurances back  <code>\<PROJECT-ID\></code>
 
