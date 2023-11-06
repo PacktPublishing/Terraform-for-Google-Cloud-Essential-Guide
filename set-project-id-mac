@@ -3,8 +3,8 @@
 while getopts 'uh' OPTION; do
   case "$OPTION" in
     u)
-        grep  -lrnw  . -e $2 --exclude terraform.tfstate* --exclude set-project-id* --exclude-dir .terraform \
-| xargs -i@ sed -i s/$2/\<PROJECT_ID\>/g @
+        grep  -lrnw  . -e $2 --exclude terraform.tfstate* --exclude-dir set-project-id* --exclude-dir .terraform \
+| xargs -I@ sed -i '' "s/$2/\<PROJECT_ID\>/g" @
     exit 1
     ;;
     h)
@@ -15,4 +15,4 @@ while getopts 'uh' OPTION; do
     done
 
 grep  -lrnw  . -e "<PROJECT_ID>" --exclude terraform.tfstate* --exclude set-project-id* --exclude-dir .terraform \
-| xargs -i@ sed -i s/\<PROJECT_ID\>/$1/g @
+| xargs -I@ sed -i '' "s/\<PROJECT_ID\>/$1/g" @
